@@ -1,0 +1,129 @@
+<html lang="zh-cn">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="generator" content="Hexo 3.8.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="email=no">
+        <meta name="description">
+        <meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs">
+        <title>
+            一稚杨的个人博客
+        </title>
+        <link rel="stylesheet" href="/static/css/main_style.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/style_myself.css" type="text/css">
+        <link rel="icon" href="/static/image/favicon.ico">
+    </head>
+    <body>
+        <input id="navi" type="checkbox">
+        <ul class="main-navication">
+            <li>
+                <a href="/">
+                    <span>
+                        主页
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/information">
+                    <span>
+                        站点简介
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.huangwenyang.cn/">
+                    <span>
+                        主站博客
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <div class="wrapper done" id="wrap">
+            <div class="page-header">
+                <label class="navi-button light" for="navi">
+                    更多
+                </label>
+                <div class="background">
+                    <img src="http://pkbqwpnpa.bkt.clouddn.com/image/page_background.jpg">
+                </div>
+                <div class="author">
+                    <div class="head">
+                        <img src="/static/image/thumb.jpg">
+                    </div>
+                    <h3 class="name">
+                        一稚杨
+                    </h3>
+                    <p class="signature">
+                        生活不止眼前的苟且，还有手下的代码和嘴上的扯淡
+                    </p>
+                </div>
+            </div>
+            <ul class="post-list" style="max-width:800px">
+                {% for blog in blog_list %}
+                <li>
+                    <p class="date">
+                        发表日期：{{ blog.date }}
+                    </p>
+                    <h4 class="title">
+                        <a href="/content?pk={{ blog.pk }}">{{ blog.title }}</a>
+                    </h4>
+                    <div class="excerpt"></div>
+                    <ul class="meta">
+                        <li>作者：{{ blog.author }}
+                        </li>
+                        <li>1 Minutes
+                        </li>
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul class="pagination">
+                <li class="current">
+                    <a href="">1</a>
+                </li>
+                <li class="current">
+                    <a href="">2</a>
+                </li>
+            </ul>
+            <div class="page-footer">
+                <div class="top">
+                    <ul class="social">
+                        <li>
+                            <a href="https://github.com/HWY-HWY" title="Github" target="_blank">
+                                <i class="icon icon-github">
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.zhihu.com/people/yi-zhi-yang-24-92/activities" title="知乎"
+                            target="_blank">
+                                <i class="icon icon-zhihu">
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.huangwenyang.cn/" title="个人博客" target="_blank">
+                                <i class="icon icon-author">
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <p class="copyright">
+                        © 2018 一稚杨的个人博客<br>
+                        <br>
+                        <span>框架 <a href="https://hexo.io/" target="_blank" style="text-decoration: none;">HEXO</a></span> <span>-- 主题 <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank" style="text-decoration: none;">LAUGHING</a></span> <span>-- 云储存 <a href="https://www.qiniu.com/" target="_blank" style="text-decoration: none;">七牛云</a></span>
+                    </p>
+                </div>
+            </div>
+        </div><script type="text/javascript">
+var wrap = document.getElementById('wrap');
+        window.onload = function () {
+        wrap.className += ' done';
+        }
+        </script>
+    </body>
+</html>

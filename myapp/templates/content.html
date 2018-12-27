@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)http://www.hwy.fun/2018/12/27/GitHub%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/
+-->
+<html lang="zh-cn">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="generator" content="Hexo 3.8.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="email=no">
+        <meta name="description">
+        <meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs">
+        <title>
+            {% if blog_status %}
+                {{ blog.title }}
+            {% else %}
+                {{ none_message }}
+            {% endif %}
+        </title>
+        <link rel="stylesheet" href="/static/css/main_style.min.css">
+        <link rel="stylesheet" href="/static/css/style_myself.css">
+        <link rel="icon" href="/static/image/favicon.ico">
+    </head>
+
+    <body>
+        <input id="navi" type="checkbox">
+        <ul class="main-navication">
+            <li>
+                <a href="/">
+                    <span>
+                        主页
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/information">
+                    <span>
+                        站点简介
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.huangwenyang.cn/">
+                    <span>
+                        主站博客
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <div class="wrapper done" id="wrap">
+            <div class="post-header">
+                <label class="navi-button light" for="navi">
+                    更多
+                </label>
+                <img class="background" src="http://pkbqwpnpa.bkt.clouddn.com/image/page_background.jpg">
+                <div class="post-title">
+                    <h1 class="title">
+                        {% if blog_status %}
+                            {{ blog.title }}
+                        {% else %}
+                            {{ none_message }}
+                        {% endif %}
+                    </h1>
+                    <ul class="meta">
+                        <li>
+                            <i class="icon icon-author">
+                            </i>
+                            {{ blog.author }}
+                        </li>
+                        <li>
+                            <i class="icon icon-clock">
+                            </i>
+                            1 Minutes
+                        </li>
+                        <li>
+                            <i class="icon icon-calendar">
+                            </i>
+                            发表日期：{{ blog.date }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="article-content" style="max-width:800px">
+                <h3>博客正文</h3>
+                <p>
+                    {{ blog.content }}
+                </p>
+            </div>
+            <div class="article-meta" style="max-width:800px">
+            </div>
+            <ul class="navication">
+                <li class="home">
+                    <a href="/">
+                        <i class="icon icon-home">
+                        </i>
+                    </a>
+                </li>
+                {% if previous_page %}
+                <li>
+                    <a href="/content?pk={{ blog.pk }}&type=previous" title="上一篇博客">
+                        <i class="icon icon-arror-left">
+                        </i>
+                    </a>
+                </li>
+                {% endif %}
+                {% if next_page %}
+                <li>
+                    <a href="/content?pk={{ blog.pk }}&type=next" title="下一篇博客">
+                        <i class="icon icon-arror-right">
+                        </i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="page-footer">
+                <div class="top">
+                    <ul class="social">
+                        <li>
+                            <a href="https://github.com/HWY-HWY" title="Github" target="_blank">
+                                <i class="icon icon-github">
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.zhihu.com/people/yi-zhi-yang-24-92/activities" title="知乎"
+                            target="_blank">
+                                <i class="icon icon-zhihu">
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.huangwenyang.cn/" title="个人博客" target="_blank">
+                                <i class="icon icon-author">
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <p class="copyright">
+                        © 2018 一稚杨的个人博客
+                        <br>
+                        <br>
+                        <span>
+                            框架
+                            <a href="https://hexo.io/" target="_blank" style="text-decoration: none;">
+                                HEXO
+                            </a>
+                        </span>
+                        <span>
+                            -- 主题
+                            <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank"
+                            style="text-decoration: none;">
+                                LAUGHING
+                            </a>
+                        </span>
+                        <span>
+                            -- 云储存
+                            <a href="https://www.qiniu.com/" target="_blank" style="text-decoration: none;">
+                                七牛云
+                            </a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            var wrap = document.getElementById('wrap');
+            window.onload = function() {
+                wrap.className += ' done';
+            }
+        </script>
+    </body>
+
+</html>
