@@ -19,7 +19,7 @@
         <link rel="icon" href="http://pkbqwpnpa.bkt.clouddn.com/image/favicon.ico">
     </head>
 
-    <body>
+    <body onload="index()">
         <input id="navi" type="checkbox">
         <ul class="main-navication">
             <li>
@@ -187,12 +187,15 @@
                 </div>
             </div>
         </div>
-        <script>
-            var wrap = document.getElementById('wrap');
-            window.onload = function() {
-                wrap.className += ' done';
+    </body>
+   {# JS代码开始 #}
+        {# log显示JS代码开始 #}
+        <script type="text/javascript">
+        function index() {
+                console.log('一稚杨的个人博客网站，部署于pythonanywhere');
             }
         </script>
-    </body>
+        {# log显示JS代码结束 #}
+    {# JS代码结束 #}
 
 </html>

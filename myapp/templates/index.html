@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="/static/css/style_myself.css" type="text/css">
         <link rel="icon" href="http://pkbqwpnpa.bkt.clouddn.com/image/favicon.ico">
     </head>
-    <body>
+    <body onload="index()">
         <input id="navi" type="checkbox">
         <ul class="main-navication">
             <li>
@@ -115,15 +115,37 @@
                     <p class="copyright">
                         © 2018 一稚杨的个人博客<br>
                         <br>
-                        <span>框架 <a href="https://hexo.io/" target="_blank" style="text-decoration: none;">HEXO</a></span> <span>-- 主题 <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank" style="text-decoration: none;">LAUGHING</a></span> <span>-- 云储存 <a href="https://www.qiniu.com/" target="_blank" style="text-decoration: none;">七牛云</a></span>
+                        <span>
+                            框架
+                            <a href="https://www.djangoproject.com/" target="_blank" style="text-decoration: none;">
+                                Django
+                            </a>
+                        </span>
+                        <span>
+                            -- 主题
+                            <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank"
+                            style="text-decoration: none;">
+                                LAUGHING
+                            </a>
+                        </span>
+                        <span>
+                            -- 云储存
+                            <a href="https://www.qiniu.com/" target="_blank" style="text-decoration: none;">
+                                七牛云
+                            </a>
+                        </span>
                     </p>
                 </div>
             </div>
-        </div><script type="text/javascript">
-var wrap = document.getElementById('wrap');
-        window.onload = function () {
-        wrap.className += ' done';
-        }
-        </script>
+        </div>
     </body>
+   {# JS代码开始 #}
+        {# log显示JS代码开始 #}
+        <script type="text/javascript">
+        function index() {
+                console.log('一稚杨的个人博客网站，部署于pythonanywhere');
+            }
+        </script>
+        {# log显示JS代码结束 #}
+    {# JS代码结束 #}
 </html>
