@@ -16,3 +16,5 @@ class Blog(models.Model):
     blog_type = models.CharField(max_length=50)
     # 指定博客内容
     content = RichTextUploadingField()
+    # 指定是否删除文章
+    is_delete = models.BooleanField(default=False)
