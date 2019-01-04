@@ -1,6 +1,10 @@
-certifi==2018.11.29
-chardet==3.0.4
-Django==2.1.4
-idna==2.8
-pytz==2018.7
-urllib3==1.24.1
+Package         Version
+--------------- -------
+Django          2.1.4  
+django-ckeditor 5.6.1  
+django-js-asset 1.1.0  
+Pillow          5.4.0  
+pip             18.1   
+pytz            2018.7 
+setuptools      40.6.3 
+wheel           0.32.3 

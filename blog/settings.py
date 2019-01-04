@@ -138,3 +138,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # 配置ckeditor上传文件的位置，ckeditor在上传文件时会自动去寻找media的存储位置，即MEDIA_ROOT指定的位置，然后再在其下面创建一个文件夹来存放
 # ckeditor上传的文件，所以这里ckeditor上传文件的最终路径为：media/upload
 CKEDITOR_UPLOAD_PATH = 'upload/'
+
