@@ -1,6 +1,8 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
+
 
 # 博客文章模型
 class Blog(models.Model):
@@ -13,4 +15,4 @@ class Blog(models.Model):
     # 指定类型字段
     blog_type = models.CharField(max_length=50)
     # 指定博客内容
-    content = models.TextField()
+    content = RichTextUploadingField()

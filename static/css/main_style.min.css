@@ -449,12 +449,10 @@ body {
 }
 .page-header .background img {
 	display:block;
-	width:1920px;
+	width:100%;
 	height:800px;
 	position:absolute;
 	top:50%;
-	left:50%;
-	margin-left:-960px;
 	margin-top:-400px
 }
 .page-header .author {
@@ -521,12 +519,10 @@ body {
 }
 .post-header img.background {
 	display:block;
-	width:1920px;
+	width:100%;
 	height:800px;
 	position:absolute;
 	top:50%;
-	left:50%;
-	margin-left:-960px;
 	margin-top:-400px
 }
 .post-header .post-title {
@@ -585,9 +581,8 @@ body {
 }
 }@media screen and (max-width: 1024px) {
 	.post-header img.background {
-	width:1200px;
+	width:100%;
 	height:500px;
-	margin-left:-600px;
 	margin-top:-250px
 }
 .post-header .post-title {

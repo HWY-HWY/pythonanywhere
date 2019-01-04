@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lk@yi5d2o$q8(%o3nhbu6886c%prv_erj$kg_@v9&oolm&gomk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*',]
 
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -104,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'zh-Hans'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
@@ -119,8 +121,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
+
+
+# 文件上传设置
+# 设置文件上传后访问的url
+MEDIA_URL = '/media/'
+# 设置文件上传时存储的位置
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# 配置ckeditor上传文件的位置，ckeditor在上传文件时会自动去寻找media的存储位置，即MEDIA_ROOT指定的位置，然后再在其下面创建一个文件夹来存放
+# ckeditor上传的文件，所以这里ckeditor上传文件的最终路径为：media/upload
+CKEDITOR_UPLOAD_PATH = 'upload/'
