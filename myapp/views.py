@@ -21,23 +21,31 @@ def index(request):
     # 得到所有的博客列表
     blog_list = Blog.objects.all().order_by('-pk')
     context = {}
+    context['now_page'] = now_page
     context['blog_list'] = blog_list
-    context['page_num'] = int_become_list(paginator.num_pages, int(now_page_num))
+    context['page_num'] = get_show_page_list(paginator.num_pages, int(now_page_num))
     context['now_page_num'] = int(now_page_num)
     context['is_previous_page'] = is_previous_page
     context['is_next_page'] = is_next_page
     return render(request, 'index.html', context)
 
 
-# 整型数据转化为list
-def int_become_list(num, now_page_num):
-    num_list = []
-    for i in range(num):
-        num_list.append(i + 1)
-    if now_page_num - 2 > 0:
-        num_list = num_list[now_page_num - 2:]
-    print(num_list)
-    return num_list
+# 得到用于展示的页码列表，其中的num为总的页数，now_page_num为当前的页码数
+def get_show_page_list(num, now_page_num):
+    # 根据当前页得到前两页和后两页，但是需要一定的限制，即第一页不能小于1，最后一页不能大于最大的页码数
+    show_page_list = list(range(max(1, now_page_num - 2), now_page_num)) + list(range(now_page_num, min(num, now_page_num + 2) + 1))
+    # 判断列表中的第一个是否为1，如果不为第一页则要加入省略号，同时也要判断最后一个是否为总的页数，如果不是最后一页，则需要加入省略号
+    if show_page_list[0] - 1 >= 2:
+        show_page_list.insert(0, '~')
+    if num - show_page_list[-1] >= 2:
+        show_page_list.append('~')
+    # 判断列表中第一个和最后一个是否是1或者num，如果不是需要添加上
+    if show_page_list[0] != 1:
+        show_page_list.insert(0, 1)
+    if show_page_list[-1] != num:
+        show_page_list.append(num)
+    print(show_page_list)
+    return show_page_list
 
 
 # 该函数用于对Blog中的文章进行分页
