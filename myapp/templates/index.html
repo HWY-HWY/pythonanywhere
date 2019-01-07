@@ -81,11 +81,38 @@
             </ul>
             <ul class="pagination">
                 <li class="current">
-                    <a href="">1</a>
-                </li>
-                <li class="current">
-                    <a href="">2</a>
-                </li>
+                    {% if is_previous_page %}
+                        <a href ="" title="上一页" >
+                    {% else %}
+                        <a href ="javascript:volid(0);" title="没有上一页了">
+                    {% endif %}
+                        <i class="icon icon-arror-left">
+                        </i>
+                        </a>
+                    </li>
+                {% for num in page_num %}
+                    {# 判断当前是否是当前页，当前页高亮 #}
+                    {% if num == now_page_num %}
+                        <li class="current">
+                            <a href="" style="background-color: #337ab7">{{ num }}</a>
+                        </li>
+                    {% else %}
+                        <li class="current">
+                            <a href="">{{ num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                    <li class="current">
+                        {% if is_next_page %}
+                            <a href=""  title="下一页">
+                        {% else %}
+                            <a href ="javascript:volid(0);" title="没有下一页了">
+                        {% endif %}
+                        <i class="icon icon-arror-right">
+                        </i>
+                        </a>
+                    </li>
+
             </ul>
             <div class="page-footer">
                 <div class="top">
