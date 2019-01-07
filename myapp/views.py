@@ -13,18 +13,13 @@ def index(request):
     paginator = create_page()
     # 得到具体的页数
     now_page = paginator.get_page(now_page_num)
-    print(now_page.object_list)
     # 利用分页器判断当前页是否存在上一页
     is_previous_page = now_page.has_previous()
     # 判断当前页是否存在下一页
     is_next_page = now_page.has_next()
-    # 得到所有的博客列表
-    blog_list = Blog.objects.all().order_by('-pk')
     context = {}
     context['now_page'] = now_page
-    context['blog_list'] = blog_list
-    context['page_num'] = get_show_page_list(paginator.num_pages, int(now_page_num))
-    context['now_page_num'] = int(now_page_num)
+    context['page_num'] = get_show_page_list(paginator.num_pages, now_page.number)
     context['is_previous_page'] = is_previous_page
     context['is_next_page'] = is_next_page
     return render(request, 'index.html', context)

@@ -92,7 +92,7 @@
                     </li>
                 {% for num in page_num %}
                     {# 判断当前是否是当前页，当前页高亮 #}
-                    {% if num == now_page_num %}
+                    {% if num == now_page.number %}
                         <li class="current">
                             <a href="?page_num={{ num }}" style="background-color: #337ab7">{{ num }}</a>
                         </li>
