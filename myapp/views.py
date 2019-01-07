@@ -9,11 +9,11 @@ from django.core.paginator import Paginator
 def index(request):
     # 得到当前所处的页数
     now_page_num = request.GET.get('page_num', 1)
-    print(now_page_num)
     # 得到Blog的分页器
     paginator = create_page()
     # 得到具体的页数
     now_page = paginator.get_page(now_page_num)
+    print(now_page.object_list)
     # 利用分页器判断当前页是否存在上一页
     is_previous_page = now_page.has_previous()
     # 判断当前页是否存在下一页
@@ -44,7 +44,6 @@ def get_show_page_list(num, now_page_num):
         show_page_list.insert(0, 1)
     if show_page_list[-1] != num:
         show_page_list.append(num)
-    print(show_page_list)
     return show_page_list
 
 
@@ -52,8 +51,8 @@ def get_show_page_list(num, now_page_num):
 def create_page():
     # 获得所有的文章
     blog_list = Blog.objects.all()
-    # 使用django分页器进行分页，分页基数为1
-    paginator = Paginator(blog_list, 1)
+    # 使用django分页器进行分页，分页基数为5
+    paginator = Paginator(blog_list, 5)
     return paginator
 
 

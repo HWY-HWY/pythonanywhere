@@ -61,7 +61,7 @@
                 </div>
             </div>
             <ul class="post-list" style="max-width:800px">
-                {% for blog in blog_list %}
+                {% for blog in now_page.object_list %}
                 <li>
                     <p class="date">
                         发表日期：{{ blog.date }}
